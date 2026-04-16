@@ -1,0 +1,6 @@
+{
+  "name": "AI 朗诵名师点评系统",
+  "description": "专为中老年朗诵爱好者设计的AI点评系统，提供专业的语音分析和温情的朗诵指导。",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": []
+}
