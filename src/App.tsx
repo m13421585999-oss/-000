@@ -135,8 +135,14 @@ export default function App() {
     setReport(null);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
       
+      const apiKey = import.meta.env?.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY || "";
+      const ai = new GoogleGenAI({
+  apiKey: apiKey,
+  httpOptions: {
+    baseUrl: "https://api.gptsapi.net"
+  }
+});
       const prompt = `
 请你作为一位儒雅、亲切、专业的朗诵名师，对这段朗诵音频进行点评。
 当前设定的点评基调为：【${MODE_CONFIG[mode].label}】，请严格将综合评分控制在 ${MODE_CONFIG[mode].range} 分之间。
@@ -158,7 +164,7 @@ export default function App() {
 `;
 
       const response = await ai.models.generateContent({
-        model: 'gemini-3.1-pro-preview',
+        model: 'gemini-2.5-flash',
         contents: {
           parts: [
             {
