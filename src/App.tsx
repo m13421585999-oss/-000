@@ -22,9 +22,9 @@ interface ReportData {
 }
 
 const MODE_CONFIG = {
-  excellent: { label: '优秀', range: '70-75' },
-  medium: { label: '中等', range: '51-60' },
-  encouraging: { label: '鼓励', range: '40-50' },
+  excellent: { label: '优秀', range: '81-95' },
+  medium: { label: '中等', range: '61-80' },
+  encouraging: { label: '鼓励', range: '40-60' },
 };
 
 export default function App() {
